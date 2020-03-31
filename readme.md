@@ -1,5 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-It is Corona virus chat bot web app.
+This project is Corona virus chat bot web app.
+It is was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Running Projects
 
