@@ -1,0 +1,11 @@
+.main-body {
+    background-color: #fff;
+    width: 500px;
+    height: 550px; 
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    border-radius: 8px; 
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.08);
+}

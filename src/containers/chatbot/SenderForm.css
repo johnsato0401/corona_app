@@ -1,0 +1,77 @@
+.sender-form {
+    height: 112px;
+    box-shadow: 0 -3px 5px rgb(0, 0, 0, 0.05);
+}
+
+.button-wrap {
+    padding: 4px;
+}
+
+.btn-menu {
+    height: 32px; 
+    margin: 4px;
+    border-color: rgba(244, 67, 54, 0.5); 
+    border-width: 1px; 
+    border-radius: 15px;
+    padding: 4px 8px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn-menu:hover {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.08);
+}
+
+.btn-menu:focus {
+    outline: unset;
+}
+
+.btn-menu:active {
+    border-style: solid;
+}
+
+.writer-wrap {
+    padding: 19px;
+    position: relative;
+}
+
+.btn-menu span {
+    color: rgb(244, 67, 54); 
+    font-weight: bold;
+}
+
+.writer-wrap input {
+    height: 32px;
+    padding: 6px 0 7px 0; 
+    box-sizing: border-box; 
+    font-size: 16px;
+    border: unset;
+    width: calc(100% - 44px);
+}
+
+.writer-wrap input:focus {
+    outline: unset;
+}
+
+.btn-submit {
+    padding: 12px;
+    width: 44px; 
+    height:44px; 
+    box-sizing: border-box;
+    position: absolute;
+    right: 19px; 
+    top: calc(50% - 22px); 
+    cursor: pointer; 
+    border-radius: 22px;
+    border: unset; 
+    background-color: unset;
+}
+
+.btn-submit:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.btn-submit:focus {
+    outline: unset;
+}
