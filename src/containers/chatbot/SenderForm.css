@@ -75,3 +75,8 @@
 .btn-submit:focus {
     outline: unset;
 }
+
+.btn-submit svg {
+    color: #f44336; 
+    fill: currentColor;
+}
