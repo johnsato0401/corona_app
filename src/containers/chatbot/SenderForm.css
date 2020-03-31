@@ -1,6 +1,7 @@
 .sender-form {
     height: 112px;
-    box-shadow: 0 -3px 5px rgb(0, 0, 0, 0.05);
+    box-shadow: 0 -3px 5px rgb(245, 245, 245);
+    z-index: 1;
 }
 
 .button-wrap {
