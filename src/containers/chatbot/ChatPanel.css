@@ -3,6 +3,74 @@
     overflow-y: auto;
 }
 
+.chat-pannel-wrap {
+    min-height: 100%; 
+    position: relative;
+}
+
+.chat-pannel-wrap .mark {
+    height: 30px; 
+    font-size: 9.6px; 
+    color: #d0d0d0; 
+    text-transform: uppercase; 
+    text-align: center; 
+    position: absolute; 
+    bottom: 0px; 
+    width: 100%;
+}
+
+.chat-pannel-wrap .mark svg {
+    height: 19.2px;
+}
+
+.chat-flow {
+    padding: 8px 8px 19.2px 8px; 
+    box-sizing: border-box; 
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.chat-flow-wrap {
+    margin: 4px; 
+    position: relative
+}
+
+.emoz-icon {
+    height: 40px; 
+    width: 40px; 
+    position: absolute;
+}
+
+.emoz-icon img {
+    width: 40px;
+}
+
+.chats {
+    margin-left: 40px;
+}
+
+.chats .chat {
+    margin: 2px; 
+    display: grid;
+    grid-template-columns: fit-content(500px) fit-content(500px) 1fr;
+}
+
+.chats .time-mark {
+    font-size: 12px; 
+    margin-left: 4px;
+}
+
+.chat .chat-wrap {
+    margin: 2px 48px 2px 2px;
+    padding: 8px 12px;
+    background-color: #e6e6e6;
+    border-radius: 16px;
+}
+
+.chat-wrap .chat-word {
+    margin: 0; 
+    overflow-wrap: break-word;
+}
+
 @media (max-width: 500px) {
     .base-chat-pannel {
         height: calc(100% - 112px); 
