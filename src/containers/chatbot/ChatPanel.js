@@ -19,7 +19,7 @@ class ChatPanel extends React.Component {
             const chats = flow.chats.map((chat, index) => {
                 const paragraph = chat.split('\n').map((p, index) =>{
                     return (
-                        <p className='chat-word'>{p}</p>
+                        <p key={index} className='chat-word'>{p}</p>
                     );
                 });
                 return (
