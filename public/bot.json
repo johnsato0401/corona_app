@@ -1,0 +1,20 @@
+[
+    {
+        "question": "first",
+        "type": 0,
+        "data": [
+            "👏 Welcome! This COVID-19 🦠 bot is focused on 🇬🇧 people.",
+            "⚠️ I am not a medical diagnosis system. If you require medical advice, please speak to your local healthcare provider."
+        ]
+    },
+    {
+        "question": "welcome",
+        "type": 0,
+        "data": [
+            "👏 Welcome back…",
+            "Here are the latest global numbers:&nbsp;cases: 284,724&nbsp;deaths: 11,842&nbsp;recovered: 93,576",
+            "All data is collected from: https://www.worldometers.info/coronavirus/",
+            "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
+        ]
+    }
+]

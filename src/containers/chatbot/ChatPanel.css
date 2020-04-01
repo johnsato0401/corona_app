@@ -30,8 +30,8 @@
 }
 
 .chat-flow-wrap {
-    margin: 4px; 
-    position: relative
+    padding: 4px;
+    position: relative;
 }
 
 .emoz-icon {
@@ -46,6 +46,7 @@
 
 .chats {
     margin-left: 40px;
+    font-size: 14px;
 }
 
 .chats .chat {
