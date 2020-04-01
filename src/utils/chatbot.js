@@ -42,7 +42,7 @@ export function callThreadGenerator(type, id, index) {
     return Axios.get(
         'bot.json'
     ).then(res => {
-        const result = readChatThread(res.data, 0, 'first', index);
+        const result = readChatThread(res.data, type, id, index);
         return result;
     })
     .catch(err =>{

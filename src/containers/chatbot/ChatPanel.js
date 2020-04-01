@@ -17,18 +17,23 @@ class ChatPanel extends React.Component {
 
         const flows = this.props.flows.map((flow, index) => {
             const chats = flow.chats.map((chat, index) => {
+                const paragraph = chat.split('\n').map((p, index) =>{
+                    return (
+                        <p className='chat-word'>{p}</p>
+                    );
+                });
                 return (
-                    <div className='chat'>
+                    <div key={index} className='chat'>
                         <div className='chat-wrap'>
                             <div>
-                                <p className='chat-word'>{chat}</p>
+                                {paragraph}
                             </div>
                         </div>
                     </div>
                 );
             });
             return (
-                <div className='chat-flow-wrap'>
+                <div key={index} className='chat-flow-wrap'>
                     <div className='emoz-icon'>
                         <img src={coronaIcon} alt='U'/>
                     </div>
