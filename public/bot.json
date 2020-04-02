@@ -16,5 +16,19 @@
             "All data is collected from: https://www.worldometers.info/coronavirus/",
             "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
         ]
+    },
+    {
+        "question": "answer1",
+        "type": 1,
+        "data": [
+            "Sorry, I know a lot, but not everything."
+        ]
+    },
+    {
+        "question": "answer2",
+        "type": 1,
+        "data": [
+            "I'm always learning. Some days I learn more than others."
+        ]
     }
 ]

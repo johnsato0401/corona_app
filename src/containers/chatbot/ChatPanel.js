@@ -16,35 +16,65 @@ class ChatPanel extends React.Component {
         console.log(this.props);
 
         const flows = this.props.flows.map((flow, index) => {
-            const chats = flow.chats.map((chat, index) => {
-                const paragraph = chat.split('\n').map((p, index) =>{
+            if (flow.userType === 1) {
+                const chats = flow.chats.map((chat, index) => {
+                    const paragraph = chat.split('\n').map((p, index) =>{
+                        return (
+                            <p key={index} className='chat-word'>{p}</p>
+                        );
+                    });
                     return (
-                        <p key={index} className='chat-word'>{p}</p>
+                        <div key={index} className='chat'>
+                            <div className='chat-wrap'>
+                                <div>
+                                    {paragraph}
+                                </div>
+                            </div>
+                        </div>
                     );
                 });
                 return (
-                    <div key={index} className='chat'>
-                        <div className='chat-wrap'>
-                            <div>
-                                {paragraph}
-                            </div>
+                    <div key={index} className='chat-flow-wrap'>
+                        <div className='emoz-icon'>
+                            <img src={coronaIcon} alt='U'/>
+                        </div>
+                        <div className='chats'>
+                            {chats}
+                            <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
+                                today at 3:25 PM
+                            </time>
                         </div>
                     </div>
                 );
-            });
-            return (
-                <div key={index} className='chat-flow-wrap'>
-                    <div className='emoz-icon'>
-                        <img src={coronaIcon} alt='U'/>
+            } else if (flow.userType === 0) {
+                const chats = flow.chats.map((chat, index) => {
+                    const paragraph = chat.split('\n').map((p, index) =>{
+                        return (
+                            <p key={index} className='chat-word'>{p}</p>
+                        );
+                    });
+                    return (
+                        <div key={index} className='chat'>
+                            <div className='chat-wrap'>
+                                <div>
+                                    {paragraph}
+                                </div>
+                            </div>
+                        </div>
+                    );
+                });
+                return (
+                    <div key={index} className='chat-flow-wrap'>
+                        <div className='chats'>
+                            {chats}
+                            <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
+                                today at 3:25 PM
+                            </time>
+                        </div>
                     </div>
-                    <div className='chats'>
-                        {chats}
-                        <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
-                            today at 3:25 PM
-                        </time>
-                    </div>
-                </div>
-            );
+                );
+            }
+            
         });
 
         return (
