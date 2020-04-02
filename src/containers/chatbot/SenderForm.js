@@ -20,6 +20,10 @@ class SenderForm extends React.Component {
     }
 
     handleChange = (event) => {
+        if (event.target.value === '') {
+            return;
+        }
+
         this.setState({
             chat: event.target.value
         });
@@ -33,7 +37,7 @@ class SenderForm extends React.Component {
     }
 
     getMenuButton() {
-        if (this.props.isLoading) {
+        if (this.props.isLoading || this.props.isSending) {
             return null;
         } else {
             return (
@@ -70,7 +74,8 @@ class SenderForm extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.chatbot.loading
+        isLoading: state.chatbot.loading,
+        isSending: state.chatbot.sending
     }
 }
 

@@ -2,14 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './ChatPanel.css';
-import coronaIcon from 'res/images/corona-icon.png';
 
 import * as actions from 'domains/chatbot/redux/actionTypes';
+import MyChat from 'components/chatbot/MyChat';
+import UserChat from 'components/chatbot/UserChat';
 
 class ChatPanel extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.chatScroll = React.createRef();
+    }
+
     componentDidMount() {
         const loadHistory = this.props.loadHistory;
         loadHistory();
+    }
+
+    componentDidUpdate(prevProps) {
+        this.chatScroll.current.scrollTop = this.chatScroll.current.scrollHeight;
     }
 
     render() {
@@ -17,69 +28,19 @@ class ChatPanel extends React.Component {
 
         const flows = this.props.flows.map((flow, index) => {
             if (flow.userType === 1) {
-                const chats = flow.chats.map((chat, index) => {
-                    const paragraph = chat.split('\n').map((p, index) =>{
-                        return (
-                            <p key={index} className='chat-word'>{p}</p>
-                        );
-                    });
-                    return (
-                        <div key={index} className='chat'>
-                            <div className='chat-wrap'>
-                                <div>
-                                    {paragraph}
-                                </div>
-                            </div>
-                        </div>
-                    );
-                });
                 return (
-                    <div key={index} className='chat-flow-wrap'>
-                        <div className='emoz-icon'>
-                            <img src={coronaIcon} alt='U'/>
-                        </div>
-                        <div className='chats'>
-                            {chats}
-                            <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
-                                {flow.time.toISOString()}
-                            </time>
-                        </div>
-                    </div>
+                    <UserChat flow={flow} key={index} />
                 );
             } else if (flow.userType === 0) {
-                const chats = flow.chats.map((chat, index) => {
-                    const paragraph = chat.split('\n').map((p, index) =>{
-                        return (
-                            <p key={index} className='chat-word'>{p}</p>
-                        );
-                    });
-                    return (
-                        <div key={index} className='chat me'>
-                            <div></div>
-                            <div className='chat-wrap me'>
-                                <div>
-                                    {paragraph}
-                                </div>
-                            </div>
-                        </div>
-                    );
-                });
                 return (
-                    <div key={index} className='chat-flow-wrap' style={{textAlign: 'right'}}>
-                        <div className='chats'>
-                            {chats}
-                            <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
-                                {flow.time.toISOString()}
-                            </time>
-                        </div>
-                    </div>
+                    <MyChat flow={flow} key={index} />
                 );
             }
             return null;
         });
 
         return (
-            <div className='base-chat-pannel'>
+            <div className='base-chat-pannel' ref={this.chatScroll}>
                 <div className='chat-pannel-wrap'>
                     <div className='chat-flow'>
                         {flows}
