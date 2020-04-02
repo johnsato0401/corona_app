@@ -55,7 +55,7 @@ class ChatPanel extends React.Component {
                     });
                     return (
                         <div key={index} className='chat'>
-                            <div className='chat-wrap'>
+                            <div className='chat-wrap me'>
                                 <div>
                                     {paragraph}
                                 </div>

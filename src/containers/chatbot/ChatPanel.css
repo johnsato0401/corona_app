@@ -67,6 +67,12 @@
     border-radius: 16px;
 }
 
+.chat .chat-wrap.me {
+    background-color: #f44336;
+    margin: 2px 2px 2px 48px;
+    color: white;
+}
+
 .chat-wrap .chat-word {
     margin: 0; 
     overflow-wrap: break-word;

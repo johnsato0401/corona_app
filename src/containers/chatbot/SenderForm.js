@@ -13,7 +13,15 @@ class SenderForm extends React.Component {
         };
     }
 
+    handleKeydown = (event) => {
+        if (event.key === 'Enter') {
+            this.handleSubmit();
+        }
+    }
+
     handleChange = (event) => {
+        
+
         this.setState({
             ...this.state,
             chat: event.target.value
@@ -47,10 +55,10 @@ class SenderForm extends React.Component {
     render() {
         const menu = this.getMenuButton();
         return (
-            <form className='sender-form'>
+            <div className='sender-form'>
                 {menu}
                 <div className='writer-wrap' >
-                    <input className='' placeholder='Write a message...' value={this.state.chat} onChange={this.handleChange} />
+                    <input className='' placeholder='Write a message...' value={this.state.chat} onChange={this.handleChange} onKeyDown={this.handleKeydown} />
                     <button type='button' className='btn-submit' onClick={this.handleSubmit}>
                         <span>
                             <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
@@ -59,7 +67,7 @@ class SenderForm extends React.Component {
                         </span>
                     </button>
                 </div>
-            </form>
+            </div>
         );
     }
 }
