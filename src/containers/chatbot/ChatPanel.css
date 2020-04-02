@@ -52,7 +52,11 @@
 .chats .chat {
     margin: 2px; 
     display: grid;
-    grid-template-columns: fit-content(500px) fit-content(500px) 1fr;
+    grid-template-columns: fit-content(500px) 1fr;
+}
+
+.chats .chat.me {
+    grid-template-columns:  1fr fit-content(500px);
 }
 
 .chats .time-mark {

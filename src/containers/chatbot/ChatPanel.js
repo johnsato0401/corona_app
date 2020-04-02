@@ -41,7 +41,7 @@ class ChatPanel extends React.Component {
                         <div className='chats'>
                             {chats}
                             <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
-                                today at 3:25 PM
+                                {flow.time.toISOString()}
                             </time>
                         </div>
                     </div>
@@ -54,7 +54,8 @@ class ChatPanel extends React.Component {
                         );
                     });
                     return (
-                        <div key={index} className='chat'>
+                        <div key={index} className='chat me'>
+                            <div></div>
                             <div className='chat-wrap me'>
                                 <div>
                                     {paragraph}
@@ -64,17 +65,17 @@ class ChatPanel extends React.Component {
                     );
                 });
                 return (
-                    <div key={index} className='chat-flow-wrap'>
+                    <div key={index} className='chat-flow-wrap' style={{textAlign: 'right'}}>
                         <div className='chats'>
                             {chats}
                             <time className='time-mark' dateTime="2020-03-31T07:25:40.410Z">
-                                today at 3:25 PM
+                                {flow.time.toISOString()}
                             </time>
                         </div>
                     </div>
                 );
             }
-            
+            return null;
         });
 
         return (

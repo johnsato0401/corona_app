@@ -20,10 +20,7 @@ class SenderForm extends React.Component {
     }
 
     handleChange = (event) => {
-        
-
         this.setState({
-            ...this.state,
             chat: event.target.value
         });
     }
@@ -31,7 +28,6 @@ class SenderForm extends React.Component {
     handleSubmit = () => {
         this.props.sendChat(this.state.chat);
         this.setState({
-            ...this.state,
             chat: ''
         });
     }

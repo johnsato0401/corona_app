@@ -10,7 +10,9 @@ const initialState = {
 function createChatflow(from, chat) {
     return {
         userType: from,
-        chats: [chat]
+        chats: [chat],
+        time: new Date(),
+        end: false
     }
 }
 
@@ -26,6 +28,11 @@ export default (state = initialState, action) => produce(state, draft => {
             return draft;
         case actions.LOADCHATHISTORY_FLOW_END:
             draft.loading = draft.loading - 1;
+            if (draft.loading === 0) {
+                const lastFlow = draft.chatHistory[draft.chatHistory.length - 1];
+                lastFlow.end = true;
+                draft.chatHistory[draft.chatHistory.length - 1] = lastFlow;
+            }
             return draft;
         case actions.LOADCHATHISTORY_SENDING:
             draft.sending = true;
@@ -38,14 +45,15 @@ export default (state = initialState, action) => produce(state, draft => {
                 draft.chatHistory.push(createChatflow(action.from, action.chat));
             } else {
                 const lastFlow = draft.chatHistory[draft.chatHistory.length - 1];
-                if (lastFlow.time !== undefined) {
+                if (lastFlow.end === true) {
                     draft.chatHistory.push(createChatflow(action.from, action.chat));
                 } else if (lastFlow.userType !== action.from) {
-                    lastFlow.time = new Date();
+                    lastFlow.end = true;
                     draft.chatHistory[draft.chatHistory.length - 1] = lastFlow;
                     draft.chatHistory.push(createChatflow(action.from, action.chat));
                 } else {
                     const flow = appendChat(lastFlow, action.chat);
+                    flow.time = new Date();
                     draft.chatHistory[draft.chatHistory.length - 1] = flow;
                 }
             }
