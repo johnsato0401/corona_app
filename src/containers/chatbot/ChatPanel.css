@@ -24,7 +24,7 @@
 }
 
 .chat-flow {
-    padding: 8px 8px 19.2px 8px; 
+    padding: 8px 8px 35px 8px; 
     box-sizing: border-box; 
     color: rgba(0, 0, 0, 0.87);
 }
@@ -80,6 +80,48 @@
 .chat-wrap .chat-word {
     margin: 0; 
     overflow-wrap: break-word;
+}
+
+div#wave {
+    position:relative;
+    margin: 2px;
+    padding: 8px 12px;
+    background-color: #e6e6e6;
+    border-radius: 16px;
+    width: 25px
+}
+
+div#wave .dot {
+    display:inline-block;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    margin-right:3px;
+    background:#303131;
+    animation: wave 1.3s linear infinite;
+}
+
+div#wave .dot:nth-child(2) {
+    animation-delay: -0.9s;
+}
+
+div#wave .dot:nth-child(3) {
+    animation-delay: -0.7s;
+}
+
+@keyframes wave {
+	0%, 60%, 100% {
+		transform: initial;
+	}
+
+	30% {
+        transform: translateY(-5px);
+        background: #afafaf;
+	}
+}
+
+.wave-wrap {
+    margin: 6px;
 }
 
 @media (max-width: 500px) {

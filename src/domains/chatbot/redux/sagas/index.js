@@ -12,6 +12,8 @@ function* chatbotWatcher() {
 }
 
 function* sendAsk(action) {
+    let isOpenThread = false;
+    let isSendThread = false;
     try {
         if (indexOfAnswer === 0) {
             indexOfAnswer = 1;
@@ -28,11 +30,13 @@ function* sendAsk(action) {
         }
 
         yield put({ type: actions.LOADCHATHISTORY_SENDING });
+        isSendThread = true
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0});
         // TODO: sending server.
         yield put({ type: actions.LOADCHATHISTORY_SENDING_END });
         
         yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
+        isOpenThread = true;
         let data = yield call(apiCall, indexOfAnswer);
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         for (let i = 1; i < 100; i ++) {
@@ -45,11 +49,17 @@ function* sendAsk(action) {
         }
         yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
     } catch(error) {
-
+        if (isOpenThread) {
+            yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
+        }
+        if (isSendThread) {
+            yield put({ type: actions.LOADCHATHISTORY_SENDING_END });
+        }
     }
 }
 
 function* loadHistory(action) {
+    let isOpenThread = false;
     try {
         // TODO: load history
         // if history is empty, show Welcom new user.
@@ -62,6 +72,7 @@ function* loadHistory(action) {
         }
 
         yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
+        isOpenThread = true;
         let data = yield call(apiCall);
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         for (let i = 1; i < 100; i ++) {
@@ -95,7 +106,9 @@ function* loadHistory(action) {
         }
         yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
     } catch(error) {
-        
+        if (isOpenThread) {
+            yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
+        }
     }
 }
 

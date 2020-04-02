@@ -37,7 +37,7 @@ class SenderForm extends React.Component {
     }
 
     getMenuButton() {
-        if (this.props.isLoading || this.props.isSending) {
+        if (this.props.isLoading > 0 || this.props.isSending) {
             return null;
         } else {
             return (
