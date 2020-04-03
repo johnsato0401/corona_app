@@ -91,6 +91,14 @@
     scroll-snap-align: center;
 }
 
+.gallery-wrap .node:first-of-type {
+    margin-left: 0;
+}
+
+.gallery-wrap .node:last-of-type {
+    margin-right: 0;
+}
+
 .node .node-wrap {
     height: 300px; 
     width: 100%; 

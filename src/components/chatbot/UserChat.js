@@ -56,7 +56,7 @@ export default class UserChat extends React.Component {
                     return (
                         <div key={index} className='gallery'>
                             <div className='image-wrap'>
-                                <img alt='Img' src={chat.img} style={{  }}/>
+                                <img alt='Img' src={chat.img}/>
                             </div>
                         </div>
                     );
