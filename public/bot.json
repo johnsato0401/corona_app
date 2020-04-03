@@ -88,7 +88,10 @@
         "data": [
             "The best way to protect yourself from COVID-19 is to reduce personal contact. Here are some simple tips",
             "✅ Make a habit of frequently washing your hands 🤲 with soap 🧼 and water 💧 or an alcohol-based hand wash. DO THIS: after visiting the bathroom 🚽, after travelling on public transport 🚂, and before eating 🍽",
-            "picture",
+            {
+                "type": 1,
+                "img": "img/ProtectBlog.jpeg"
+            },
             "✅ Reduce personal contact - e.g. avoid shaking 🤝 hands and keep at least 1️⃣-2️⃣ metres away from other people and avoid crowded places.",
             "✅ Cover your mouth 👄 and nose 👃 with a tissue or your sleeve (not your hands) when you cough or sneeze 🤧",
             "✅ Consider getting a flu jag 💉, to avoid the possibility of acquiring both COVID-19 and flu at the same time.",
