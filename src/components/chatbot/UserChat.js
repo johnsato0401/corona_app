@@ -3,11 +3,27 @@ import React from 'react';
 import coronaIcon from 'res/images/corona-icon.png';
 
 export default class UserChat extends React.Component {
+    validURL(str) {
+        var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+        return !!pattern.test(str);
+    }
+      
     getParagraph(chat) {
         const paragraph = chat.split('\n').map((p, index) =>{
-            return (
-                <p key={index} className='chat-word'>{p}</p>
-            );
+            if (this.validURL(p)) {
+                return (
+                    <a key={index} href={p} className='chat-word'>{p}</a>
+                );
+            } else {
+                return (
+                    <p key={index} className='chat-word'>{p}</p>
+                );
+            }
         });
 
         return paragraph;

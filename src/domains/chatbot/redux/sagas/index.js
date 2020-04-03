@@ -24,7 +24,7 @@ function* sendQuery(action) {
             return callThreadGenerator(0, id, index);
         }
         yield put({ type: actions.LOADCHATHISTORY_SENDING});
-        isSendThread = true
+        isSendThread = true;
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0 });
         yield put({ type: actions.LOADCHATHISTORY_SENDING_END});
 
@@ -64,7 +64,7 @@ function* sendAsk(action) {
             return callThreadGenerator(0, id, index);
         }
         yield put({ type: actions.LOADCHATHISTORY_SENDING});
-        isSendThread = true
+        isSendThread = true;
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0 });
         yield put({ type: actions.LOADCHATHISTORY_SENDING_END});
 

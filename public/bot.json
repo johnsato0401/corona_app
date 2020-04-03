@@ -13,7 +13,8 @@
         "data": [
             "👏 Welcome back…",
             "Here are the latest global numbers:\ncases: 284,724\ndeaths: 11,842\nrecovered: 93,576",
-            "All data is collected from: https://www.worldometers.info/coronavirus/",
+            "All data is collected from: ",
+            "https://www.worldometers.info/coronavirus/",
             "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
         ]
     },
@@ -69,7 +70,8 @@
         "type": 0,
         "data": [
             "Here are the latest global numbers:\ncases: 1,015,048\ndeaths: 53,166\nrecovered: 212,035",
-            "All data is collected from: https://www.worldometers.info/coronavirus/",
+            "All data is collected from:", 
+            "https://www.worldometers.info/coronavirus/",
             "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
         ]
     },
@@ -104,7 +106,8 @@
         "type": 0,
         "data": [
             "Here are the latest global numbers:\ncases: 1,015,048\ndeaths: 53,166\nrecovered: 212,035",
-            "All data is collected from: https://www.worldometers.info/coronavirus/",
+            "All data is collected from:", 
+            "https://www.worldometers.info/coronavirus/",
             "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
         ]
     },
