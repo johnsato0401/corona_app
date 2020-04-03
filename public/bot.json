@@ -18,6 +18,73 @@
         ]
     },
     {
+        "question": "menu",
+        "type": 0,
+        "data": [
+            "test"
+        ]
+    },
+    {
+        "question": "Getting Prepared",
+        "type": 0,
+        "data": [
+            "It makes sense to take some common sense precautions in case of disruption.",
+            "🍕 FOOD: Consider stocking supplies of long-life items like pasta, canned foods, rice, etc.",
+            "💊 MEDICATIONS: If you take medication, make sure you have sufficient supplies in your house.",
+            "🧻 TOILETRIES: Hand sanitizer, soap, toilet roll, sanitary products, etc.",
+            "🐶 PETS: Don't forget the needs of your fury friends!"
+        ]
+    },
+    {
+        "question": "Show me the numbers",
+        "type": 0,
+        "data": [
+            "Here are the latest global numbers:\ncases: 1,015,048\ndeaths: 53,166\nrecovered: 212,035",
+            "All data is collected from: https://www.worldometers.info/coronavirus/",
+            "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
+        ]
+    },
+    {
+        "question": "Symptoms",
+        "type": 0,
+        "data": [
+            "COVID-19 causes flu-like symptoms, typically starting with a fever 🤒, followed by a dry cough .",
+            "It rarely seems to cause a runny nose 👃, sneezing 🤧, or sore throat. Those symptoms are more likely signs of a cold.",
+            "In some patients - particularly the elderly and others with other chronic health conditions, it can develop into pneumonia, with chest tightness, chest pain, and shortness of breath."
+        ]
+    },
+    {
+        "question": "Protecting Yourself",
+        "type": 0,
+        "data": [
+            "The best way to protect yourself from COVID-19 is to reduce personal contact. Here are some simple tips",
+            "✅ Make a habit of frequently washing your hands 🤲 with soap 🧼 and water 💧 or an alcohol-based hand wash. DO THIS: after visiting the bathroom 🚽, after travelling on public transport 🚂, and before eating 🍽",
+            "picture",
+            "✅ Reduce personal contact - e.g. avoid shaking 🤝 hands and keep at least 1️⃣-2️⃣ metres away from other people and avoid crowded places.",
+            "✅ Cover your mouth 👄 and nose 👃 with a tissue or your sleeve (not your hands) when you cough or sneeze 🤧",
+            "✅ Consider getting a flu jag 💉, to avoid the possibility of acquiring both COVID-19 and flu at the same time.",
+            "❌ Avoid touching your eyes 👁, nose 👃 or mouth 👄 with your hands.",
+            "❌ Try to avoid crowded places where it's difficult to stay over 1 metre from others."
+        ]
+    },
+    {
+        "question": "Current Status",
+        "type": 0,
+        "data": [
+            "Here are the latest global numbers:\ncases: 1,015,048\ndeaths: 53,166\nrecovered: 212,035",
+            "All data is collected from: https://www.worldometers.info/coronavirus/",
+            "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
+        ]
+    },
+    {
+        "question": "Critical Information",
+        "type": 0,
+        "data": [
+            "⚠️ UK government advice is that if you have a high temperature or a new continuous cough, you should stay at home for 7️⃣ days.",
+            "Those who are at increased risk of severe illness from COVID-19 should be particularly stringent in following social distancing measures."
+        ]
+    },
+    {
         "question": "answer1",
         "type": 1,
         "data": [

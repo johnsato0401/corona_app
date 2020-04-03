@@ -9,6 +9,46 @@ let indexOfAnswer = 1;
 function* chatbotWatcher() {
     yield takeLatest(actions.LOADCHATHISTORY_LOAD, loadHistory);
     yield takeEvery(actions.SEND_ASK, sendAsk);
+    yield takeEvery(actions.SEND_QUERY, sendQuery);
+}
+
+function* sendQuery(action) {
+    let isOpenThread = false;
+    let isSendThread = false;
+    try {
+        const apiCall = (id) => {
+            return callGenerator(0, id);
+        };
+
+        const apiCallThread = (id, index) => {
+            return callThreadGenerator(0, id, index);
+        }
+        yield put({ type: actions.LOADCHATHISTORY_SENDING});
+        isSendThread = true
+        yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0 });
+        yield put({ type: actions.LOADCHATHISTORY_SENDING_END});
+
+        yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
+        isOpenThread = true;
+        let data = yield call(apiCall, action.value);
+        yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
+        for (let i = 1; i < 100; i ++) {
+            if (data.isLast === undefined || data.isLast === true) {
+                break;
+            }
+
+            data = yield call(apiCallThread, action.value, i);
+            yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
+        }
+        yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
+    } catch(error) {
+        if (isOpenThread) {
+            yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
+        }
+        if (isSendThread) {
+            yield put({ type: actions.LOADCHATHISTORY_SENDING_END });
+        }
+    }
 }
 
 function* sendAsk(action) {
@@ -29,6 +69,14 @@ function* sendAsk(action) {
             }
         }
 
+        const apiCallThread = (key, index) => {
+            if (key === 0) {
+                return callThreadGenerator(1, 'answer1', index);
+            } else {
+                return callThreadGenerator(1, 'answer2', index);
+            }
+        }
+
         yield put({ type: actions.LOADCHATHISTORY_SENDING });
         isSendThread = true
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0});
@@ -44,7 +92,7 @@ function* sendAsk(action) {
                 break;
             }
 
-            data = yield call(apiCall, i);
+            data = yield call(apiCallThread, indexOfAnswer, i);
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         }
         yield put({ type: actions.LOADCHATHISTORY_FLOW_END });

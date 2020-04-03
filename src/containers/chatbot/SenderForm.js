@@ -9,8 +9,12 @@ class SenderForm extends React.Component {
         super(props);
 
         this.state = {
-            chat: ''
+            chat: '',
+            showMenu: true
         };
+
+        this.strMenu = '🏡 Menu';
+        this.strShowNumber = '🧮 Show me the numbers';
     }
 
     handleKeydown = (event) => {
@@ -20,10 +24,6 @@ class SenderForm extends React.Component {
     }
 
     handleChange = (event) => {
-        if (event.target.value === '') {
-            return;
-        }
-
         this.setState({
             chat: event.target.value
         });
@@ -36,18 +36,33 @@ class SenderForm extends React.Component {
         });
     }
 
+    sendMenu = () => {
+        if (this.state.showMenu === true) {
+            this.props.sendQuery('menu');
+        } else {
+            this.props.sendQuery('Show me the numbers');
+        }
+
+        const showMenu = !this.state.showMenu;
+        this.setState({
+            chat: this.state.chat,
+            showMenu: showMenu
+        });
+    }
+
     getMenuButton() {
+        const strButton = this.state.showMenu === true ? this.strMenu : this.strShowNumber;
         if (this.props.isLoading > 0 || this.props.isSending) {
             return null;
         } else {
             return (
                 <div className='button-wrap'>
-                <button className='btn-menu'>
-                    <span role='img' aria-label='donut'>
-                        🏡 Menu
-                    </span>
-                </button>
-            </div>
+                    <button className='btn-menu' type='button' onClick={this.sendMenu}>
+                        <span role='img' aria-label='donut'>
+                            {strButton}
+                        </span>
+                    </button>
+                </div>
             );
         }
     }
@@ -81,7 +96,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendChat: (chat) => dispatch({ type: actions.SEND_ASK, value: chat})
+        sendChat: (chat) => dispatch({ type: actions.SEND_ASK, value: chat }),
+        sendQuery: (chat) => dispatch({ type: actions.SEND_QUERY, value: chat })
     }
 }
 
