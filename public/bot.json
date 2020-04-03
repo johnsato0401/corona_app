@@ -103,8 +103,9 @@
         "question": "Current Status",
         "type": 0,
         "data": [
-            "This would provide real time figures of cases in Nigeria.",
-            "Provide figures on: Cases, Deaths, Recoveries, Daily cases"
+            "Here are the latest global numbers:\ncases: 1,063,947\ndeaths: 56,620\nrecovered: 225,960",
+            "All data is collected from:\nhttps://www.worldometers.info/coronavirus/",
+            "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)."
         ]
     },
     {

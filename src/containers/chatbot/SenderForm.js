@@ -10,11 +10,18 @@ class SenderForm extends React.Component {
 
         this.state = {
             chat: '',
-            showMenu: true
+            showMenu: 0
         };
 
-        this.strMenu = '🏡 Menu';
-        this.strShowNumber = '🧮 Show me the numbers';
+        this.strMenu = [
+            'menu',
+            'Show me the numbers',
+            'Critical Information',
+            'Current Status',
+            'Protecting Yourself',
+            'Symptoms',
+            'Getting Prepared'
+        ];
     }
 
     handleKeydown = (event) => {
@@ -37,13 +44,9 @@ class SenderForm extends React.Component {
     }
 
     sendMenu = () => {
-        if (this.state.showMenu === true) {
-            this.props.sendQuery('menu');
-        } else {
-            this.props.sendQuery('Show me the numbers');
-        }
+        this.props.sendQuery(this.strMenu[this.state.showMenu]);
 
-        const showMenu = !this.state.showMenu;
+        const showMenu = this.state.showMenu + 1 >= this.strMenu.length ? 0: this.state.showMenu + 1;
         this.setState({
             chat: this.state.chat,
             showMenu: showMenu
@@ -51,7 +54,7 @@ class SenderForm extends React.Component {
     }
 
     getMenuButton() {
-        const strButton = this.state.showMenu === true ? this.strMenu : this.strShowNumber;
+        const strButton = this.strMenu[this.state.showMenu];
         /*
         if (this.props.isLoading > 0 || this.props.isSending) {
             return null;
