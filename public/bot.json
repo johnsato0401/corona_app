@@ -22,6 +22,7 @@
         "question": "menu",
         "type": 0,
         "data": [
+            "👉 Here's my top tips…\n1️⃣ Wash your hands frequently with soap 🧼 and water 💦 or an alcohol-based hand cleaner\n2️⃣ Avoid touching your face 🤭\n3️⃣ Stay at home if you have a temperature 🤒 or any respiratory symptoms 🤧, no matter how mild.\nPress the menu button below 👇 to checkout how I can help you.",
             {
                 "type": 0,
                 "data": [{
@@ -30,7 +31,7 @@
                     "content": "Check if you need to take action now.",
                     "link": "Critical Information"
                 },{
-                    "img": "img/Preparing.png",
+                    "img": "img/Status.png",
                     "title": "Current Status",
                     "content": "Check the latest status of COVID-19.",
                     "link": "Current Status"
@@ -40,12 +41,12 @@
                     "content": "Learn how to avoid becoming infected.",
                     "link": "Protecting Yourself"
                 },{
-                    "img": "img/Status.png",
+                    "img": "img/Symptoms.png",
                     "title": "Symptoms",
                     "content": "Learn how to recognise the symptoms of COVID-19 and how they differ from a cold or the flu.",
                     "link": "Symptoms"
                 },{
-                    "img": "img/Symptoms.png",
+                    "img": "img/Preparing.png",
                     "title": "Getting Prepared",
                     "content": "Make some common-sense preparations in case COVID-19 causes disruptions.",
                     "link": "Getting Prepared"
@@ -79,44 +80,184 @@
         "question": "Symptoms",
         "type": 0,
         "data": [
-            "COVID-19 causes flu-like symptoms, typically starting with a fever 🤒, followed by a dry cough .",
-            "It rarely seems to cause a runny nose 👃, sneezing 🤧, or sore throat. Those symptoms are more likely signs of a cold.",
-            "In some patients - particularly the elderly and others with other chronic health conditions, it can develop into pneumonia, with chest tightness, chest pain, and shortness of breath."
+            "COVID-19 causes flu-like symptoms, typically starting with a fever, followed by a dry cough or breathing difficulties",
+            "In some patients - particularly the elderly and others with other chronic health conditions, it can develop into pneumonia, with chest tightness, chest pain, and shortness of breath.",
+            "If you have these symptoms and feel unwell you should immediately contact NCDC on 07032864444 or 080097000010 (toll-free)."
         ]
     },
     {
         "question": "Protecting Yourself",
         "type": 0,
         "data": [
-            "The best way to protect yourself from COVID-19 is to reduce personal contact. Here are some simple tips",
-            "✅ Make a habit of frequently washing your hands 🤲 with soap 🧼 and water 💧 or an alcohol-based hand wash. DO THIS: after visiting the bathroom 🚽, after travelling on public transport 🚂, and before eating 🍽",
-            {
-                "type": 1,
-                "img": "img/ProtectBlog.jpeg"
-            },
-            "✅ Reduce personal contact - e.g. avoid shaking 🤝 hands and keep at least 1️⃣-2️⃣ metres away from other people and avoid crowded places.",
-            "✅ Cover your mouth 👄 and nose 👃 with a tissue or your sleeve (not your hands) when you cough or sneeze 🤧",
-            "✅ Consider getting a flu jag 💉, to avoid the possibility of acquiring both COVID-19 and flu at the same time.",
-            "❌ Avoid touching your eyes 👁, nose 👃 or mouth 👄 with your hands.",
-            "❌ Try to avoid crowded places where it's difficult to stay over 1 metre from others."
+            "To reduce the risk of infection or spread of COVID-19, members of the public are advised to adhere to the following hand and respiratory hygiene measures:",
+            "• Keep a social distance of least 2 metres while in public and avoid large gatherings and crowded places such as supermarkets and outdoor markets.",
+            "• Wash your hands regularly with soap under running water and use hand sanitisers frequently",
+            "• Cover your mouth and nose properly with tissue paper when sneezing and/or coughing and immediately dispose of the tissue in a covered waste bin. After this, wash your hands with soap and water or use hand sanitiser",
+            "• You may also cough into your elbow if disposable tissue is not available. You are strongly advised not to re-use handkerchiefs",
+            "• If you become sick while travelling, you should avoid close contact with other people while you are symptomatic and cover your mouth and nose with a face mask",
+            "• Avoid close contact with anyone showing symptoms of respiratory illness such as coughing and sneezing",
+            "• Healthcare workers are always advised to observe standard infection prevention and control measures when attending to patients and take a travel history"
         ]
     },
     {
         "question": "Current Status",
         "type": 0,
         "data": [
-            "Here are the latest global numbers:\ncases: 1,015,048\ndeaths: 53,166\nrecovered: 212,035",
-            "All data is collected from:", 
-            "https://www.worldometers.info/coronavirus/",
-            "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
+            "This would provide real time figures of cases in Nigeria.",
+            "Provide figures on: Cases, Deaths, Recoveries, Daily cases"
         ]
     },
     {
         "question": "Critical Information",
         "type": 0,
         "data": [
-            "⚠️ UK government advice is that if you have a high temperature or a new continuous cough, you should stay at home for 7️⃣ days.",
-            "Those who are at increased risk of severe illness from COVID-19 should be particularly stringent in following social distancing measures."
+            "This would include government updates:",
+            "It means that anyone who has been exposed to the virus (e.g. those returning from high risk countries*) should stay at home and in strict isolation from their families for 14 days. This is to limit contact with people, protect yourself and loved ones.",
+            "This would include government updates:",
+            "If you have travelled from the following countries:\nChina,\nItaly,\nIran,\nJapan,\nRepublic of Korea,\nSpain,\nGermany,\nand France, \nwith widespread community transmission of COVID-19 to Nigeria in the last 14 days, you should STAY INDOORS and avoid contact with other people. Please follow this advice even if you do not have symptoms of the virus. If you develop symptoms during this time, immediately contact NCDC on 07032864444 or 080097000010 (toll-free)"
+        ]
+    },
+    {
+        "question": "What is COVID-19?",
+        "type": 0,
+        "data": [
+            "Coronaviruses are zoonotic, meaning they are normally transmitted between animals and people. The coronavirus disease (COVID-19) is caused by a new strain of coronavirus (SARS-CoV-2) that has not been previously identified in humans. It was first reported to WHO on the 31st of December, 2019 in Wuhan, China."
+        ]
+    },
+    {
+        "question": "What is the source of COVID-19?",
+        "type": 0,
+        "data": [
+            "Scientists and public health officials are working hard to identify the source of the SARS-CoV-2 which is the virus that causes COVID-19. The initial transmission appeared to be from an animal source, but there has been person-to-person transmission in countries."
+        ]
+    },
+    {
+        "question": "Is COVID-19 airborne?",
+        "type": 0,
+        "data": [
+            "When a person with coronavirus coughs or exhales, droplets land on objects and surfaces around the person. Other people then catch the virus by touching these objects or surfaces, then touching their eyes, nose or mouth.",
+            "People can also catch coronavirus if they breathe in these. This is why it is important to stay more than 2 metres away from a person who is coughing or sneezing."
+        ]
+    },
+    {
+        "question": "What are the symptoms of COVID-19?",
+        "type": 0,
+        "data": [
+            "• Cough\n• Fever\n• Breathing difficulties",
+            "People who have recently travelled from any country* with ongoing transmission of COVID-19 and feel unwell, should immediately contact NCDC on 07032864444 or 080097000010 (toll-free)."
+        ]
+    },
+    {
+        "question": "Are countries with hot weather immune to COVID-19?",
+        "type": 0,
+        "data": [
+            "From the evidence so far, the virus causing COVID-19 can be transmitted in ALL AREAS, including areas with hot and humid weather."
+        ]
+    },
+    {
+        "question": "Are there any cases in Nigeria?",
+        "type": 0,
+        "data": [
+            "Yes. Nigeria has recorded some confirmed cases of COVID-19. A majority of the cases were imported from high risk countries with community transmission of COVID-19. The Nigerian government agencies has ensured that all confirmed cases are isolated and receive treatment, while intense contact tracing is conducted.",
+            "The second case, confirmed on the 8th of March 2020 in Ogun State, was a contact of the index case. Following supportive care, he tested negative twice for COVID-19 and was discharged on the 13th of March 2020."
+        ]
+    },
+    {
+        "question": "What is Nigeria doing to control the spread of the disease in the country?",
+        "type": 0,
+        "data": [
+            "The Government of Nigeria, through the Federal Ministry of Health has activated a national COVID-19 Emergency Operations Centre to coordinate response activities. This is led by NCDC. The Port Health Services Division of the Department of Public Health has heightened screening and surveillance at the ports of entry, particularly for returning travellers with history of travel to countries* with widespread community transmission. This includes the use of thermal cameras to detect fever on entry; review and analysis of the contact forms used for screening at points of entry to inform follow-ups on persons of interests through calls and scheduled visits. The national case definition is reviewed regularly based on new knowledge of the disease. Additionally, an intensive communications campaign has begun, to provide regular updates and accurate information to Nigerians on how to protect themselves and loved ones from the disease. Updates and resources on the disease can be found on ",
+            "http://www.covid19.ncdc.gov.ng"
+        ]
+    },
+    {
+        "question": "What does self-isolation mean?",
+        "type": 0,
+        "data": [
+            "Self-isolation is an important way of controlling the spread of COVID-19. It means that anyone who has been exposed to the virus (e.g. those returning from high risk countries*) should stay at home and in strict isolation from their families for 14 days. This is to limit contact with people, protect yourself and loved ones."
+        ]
+    },
+    {
+        "question": "Is there a restriction of flights coming from affected countries?",
+        "type": 0,
+        "data": [
+            "Presently, the World Health Organization (WHO) does not recommend any travel or trade restriction based on the current information available. All travellers to Nigeria will be screened on entry, regardless of country of travel origin. However, additional measures are in place for travellers from countries* with widespread community transmission."
+        ]
+    },
+    {
+        "question": "Does Nigeria have the capacity to diagnose COVID-19?",
+        "type": 0,
+        "data": [
+            "Yes. Currently, five laboratories in Nigeria can diagnose COVID-19; NCDC National Reference Laboratory; Virology Laboratory of Lagos University Teaching Hospital; Irrua Specialist Teaching Hospital; Nigerian Institute of Medical Research; and African Centre of Excellence for Genomics of Infectious Diseases. They are all in the NCDC molecular laboratory network.",
+            "Health officials are advised to call 07032864444 for sample transportation and related advice if they have a case that fits the national case definition."
+        ]
+    },
+    {
+        "question": "What is the national case definition for COVID-19?",
+        "type": 0,
+        "data": [
+            "The case definition is continually being reviewed based on new knowledge of the disease. Latest case definition can be found HERE"
+        ]
+    },
+    {
+        "question": "Is there a cure for COVID-19?",
+        "type": 0,
+        "data": [
+            "There is no specific cure yet for COVID-19. However, many of the symptoms can be treated. Treatment is based on the patient’s clinical condition but supportive care for infected persons can be highly effective."
+        ]
+    },
+    {
+        "question": "Where are the treatment centres in Nigeria?",
+        "type": 0,
+        "data": [
+            "In the last one month, NCDC has conducted rapid assessments of treatment centres. This assessment focused on identifying gaps and developing plans to rapidly ensure that we are prepared to manage cases of COVID-19. Every state in Nigeria has identified a treatment centre with minimum capacity needed to manage a case. This capacity is being scaled up rapidly.",
+            "Healthcare workers from identified treatment centres are being trained on how to manage COVID-19 cases using approved guidelines."
+        ]
+    },
+    {
+        "question": "What should I do when I return to Nigeria from a country with a confirmed case(s) of COVID-19?",
+        "type": 0,
+        "data": [
+            "If you have travelled from any country* with widespread community transmission of COVID-19 to Nigeria in the last 14 days, you should stay indoors and avoid contact with other people. Please follow this advice even if you do not have symptoms of the virus. If you develop symptoms during this time, immediately contact NCDC on 07032864444 or 080097000010 (toll-free)"
+        ]
+    },
+    {
+        "question": "Am I at risk of catching COVID-19 from a package or products that arrive from countries with a confirmed case(s)?",
+        "type": 0,
+        "data": [
+            "Currently there is no evidence to support transmission of COVID-19 associated with imported goods or packages countries with confirmed case(s). Till date, there is no known case of COVID-19 in Nigeria associated with imported goods."
+        ]
+    },
+    {
+        "question": "Should I stop my children from going to school?",
+        "type": 0,
+        "data": [
+            "Persons with persistent cough or sneezing should stay home or avoid contact with others (staying at a distance of at least 2 metres) and not mix in a crowd. Detailed public health advisory and guideline for schools can be found on",
+            "http://www.covid19.ncdc.gov.ng."
+        ]
+    },
+    {
+        "question": "Is there anything a person can do to avoid becoming infected?",
+        "type": 0,
+        "data": [
+            "To reduce the risk of infection or spread of COVID-19, members of the public are advised to adhere to the following hand and respiratory hygiene measures:",
+            "• Keep a social distance of least 2 metres while in public and avoid large gatherings and crowded places such as supermarkets and outdoor markets.",
+            "• Wash your hands regularly with soap under running water and use hand sanitisers frequently",
+            "• Cover your mouth and nose properly with tissue paper when sneezing and/or coughing and immediately dispose of the tissue in a covered waste bin. After this, wash your hands with soap and water or use hand sanitiser",
+            "• You may also cough into your elbow if disposable tissue is not available. You are strongly advised not to re-use handkerchiefs",
+            "• If you become sick while travelling, you should avoid close contact with other people while you are symptomatic and cover your mouth and nose with a face mask",
+            "• Avoid close contact with anyone showing symptoms of respiratory illness such as coughing and sneezing",
+            "• Healthcare workers are always advised to observe standard infection prevention and control measures when attending to patients and take a travel history"
+        ]
+    },
+    {
+        "question": "What can businesses do to protect their staff?",
+        "type": 0,
+        "data": [
+            "Businesses have an important role to play in protecting their employees. Employers are advised to circulate NCDC’s public health advisory on COVID-19 to all staff.",
+            "Encourage sick employees to stay at home if they are unwell. Ensure routine cleaning of high contact areas such as toilets, door handles, telephones.",
+            "If staff have travelled to any of the countries with ongoing transmission, they should be advised to self-isolate for 14 days.",
+            "*Countries with widespread community transmission as at 13th March, 2020: China, Italy, Iran, Japan, Republic of Korea, Spain, Germany and France."
         ]
     },
     {
