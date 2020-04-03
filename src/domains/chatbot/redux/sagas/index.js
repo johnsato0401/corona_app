@@ -1,11 +1,11 @@
-import { all, call, takeLatest, takeEvery, put } from 'redux-saga/effects';
+import { all, call, takeLatest, takeEvery, put, delay } from 'redux-saga/effects';
 
 
 import * as actions from '../actionTypes'
 import { callGenerator, callThreadGenerator } from 'utils/chatbot';
 
 let indexOfAnswer = 1;
-
+const dTime = 1200;
 function* chatbotWatcher() {
     yield takeLatest(actions.LOADCHATHISTORY_LOAD, loadHistory);
     yield takeEvery(actions.SEND_ASK, sendAsk);
@@ -30,13 +30,14 @@ function* sendQuery(action) {
 
         yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
         isOpenThread = true;
+        yield delay(dTime);
         let data = yield call(apiCall, action.value);
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         for (let i = 1; i < 100; i ++) {
             if (data.isLast === undefined || data.isLast === true) {
                 break;
             }
-
+            yield delay(dTime);
             data = yield call(apiCallThread, action.value, i);
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         }
@@ -69,6 +70,7 @@ function* sendAsk(action) {
 
         yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
         isOpenThread = true;
+        yield delay(dTime);
         let data = yield call(apiCall, action.value);
         if (data !== null) {
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
@@ -76,7 +78,7 @@ function* sendAsk(action) {
                 if (data.isLast === undefined || data.isLast === true) {
                     break;
                 }
-    
+                yield delay(dTime);
                 data = yield call(apiCallThread, action.value, i);
                 yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
             }
@@ -106,13 +108,14 @@ function* sendAsk(action) {
             
             // yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
             isOpenThread = true;
+            yield delay(dTime);
             let dataR = yield call(apiCallR, indexOfAnswer);
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: dataR.chat, from: 1});
             for (let i = 1; i < 100; i ++) {
                 if (dataR.isLast === undefined || dataR.isLast === true) {
                     break;
                 }
-    
+                yield delay(dTime);
                 dataR = yield call(apiCallThreadR, indexOfAnswer, i);
                 yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: dataR.chat, from: 1});
             }
@@ -143,13 +146,14 @@ function* loadHistory(action) {
 
         yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
         isOpenThread = true;
+        yield delay(dTime);
         let data = yield call(apiCall);
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         for (let i = 1; i < 100; i ++) {
             if (data.isLast === undefined || data.isLast === true) {
                 break;
             }
-
+            yield delay(dTime);
             data = yield call(apiCallThread, i);
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         }
@@ -164,6 +168,7 @@ function* loadHistory(action) {
         }
 
         // yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
+        yield delay(dTime);
         data = yield call(welcomeApiCall);
         yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         for (let i = 1; i < 100; i ++) {
@@ -171,6 +176,7 @@ function* loadHistory(action) {
                 break;
             }
 
+            yield delay(dTime);
             data = yield call(welcomeApiCallThread, i);
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
         }
