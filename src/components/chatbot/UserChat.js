@@ -14,6 +14,16 @@ export default class UserChat extends React.Component {
         this.galleryObj = React.createRef();
     }
 
+    galleryOnScroll = (event) => {
+        console.log(this.galleryScroll.current.scrollLeft)
+        const node = this.galleryObj.current.clientWidth - 4;
+        const prefix = (node * 8 / 10 + 4) - node / 2;
+        const i = (this.galleryScroll.current.scrollLeft - prefix) / (node * 8 / 10 + 8);
+        this.setState({
+            active: Math.floor(i + 1)
+        });
+    }
+
     componentDidUpdate(prevProps) {
         if (this.galleryScroll.current !== null) {
             if (this.state.active === 0) {
@@ -113,7 +123,7 @@ export default class UserChat extends React.Component {
                     
                     return (
                         <div key={index} className='gallery' ref={this.galleryObj}>
-                            <div className='gallery-wrap' ref={this.galleryScroll}>
+                            <div className='gallery-wrap' ref={this.galleryScroll} onTouchEnd={this.galleryOnScroll}>
                                 {gallery}
                             </div>
                         </div>
