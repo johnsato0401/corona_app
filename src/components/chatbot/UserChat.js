@@ -3,6 +3,14 @@ import React from 'react';
 import coronaIcon from 'res/images/corona-icon.png';
 
 export default class UserChat extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            active: 0
+        };
+    }
+
     validURL(str) {
         var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
             '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
@@ -12,7 +20,7 @@ export default class UserChat extends React.Component {
             '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
         return !!pattern.test(str);
     }
-      
+
     getParagraph(chat) {
         const paragraph = chat.split('\n').map((p, index) =>{
             if (this.validURL(p)) {
@@ -33,9 +41,21 @@ export default class UserChat extends React.Component {
         this.props.sendQuery(event.target.value);
     }
 
-    getNodes(node, index) {
+    goOnLeft = (event) => {
+        this.setState({
+            active: this.state.active - 1
+        });
+    }
+
+    goOnRight = (event) => {
+        this.setState({
+            active: this.state.active + 1
+        });
+    }
+
+    getNodes(node, index, count) {
         return (
-            <div key={index} className='node'>
+            <div key={index} className={`node ${this.state.active === index ? 'active' : '' } ${index === 0 ? 'first' : ''} ${index === count - 1 ? 'last' : ''}`}>
                 <div className='node-wrap'>
                     <div className='banner'>
                         <img alt='critical' src={node.img} />
@@ -48,6 +68,16 @@ export default class UserChat extends React.Component {
                         {node.link}
                     </button>
                 </div>
+                <button className='left-nav-button' onClick={this.goOnLeft}>
+                    <span>
+                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg>
+                    </span>
+                </button>
+                <button className='right-nav-button' onClick={this.goOnRight}>
+                    <span>
+                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path></svg>
+                    </span>
+                </button>
             </div>
         );
     }
@@ -56,8 +86,9 @@ export default class UserChat extends React.Component {
         const chats = flow.chats.map((chat, index) => {
             if ( typeof chat === 'object' && chat !== null) {
                 if (chat.type === 0) {
+                    const length = chat.data.length;
                     const gallery = chat.data.map((node, index) => {
-                        const data = this.getNodes(node, index);
+                        const data = this.getNodes(node, index, length);
                         return data;
                     });
                     

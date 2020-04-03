@@ -99,6 +99,72 @@
     margin-right: 0;
 }
 
+.node .left-nav-button {
+    display: none;
+    top: 45px; 
+    left: -28px; 
+    position: absolute; 
+    cursor: pointer; 
+    z-index: 1; 
+    background-color: #ffffff; 
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12); 
+    border-color: rgba(0, 0, 0, 0.54); 
+    color: rgba(0, 0, 0, 0.54); 
+    padding: 12px; 
+    border-radius: 50%; 
+    width: 48px; 
+    height: 48px;
+}
+
+.node.first .left-nav-button {
+    display: none !important;
+}
+
+.node.active .left-nav-button {
+    display: block;
+}
+
+.node .right-nav-button {
+    display: none;
+    top: 45px; 
+    right: -28px; 
+    position: absolute; 
+    cursor: pointer; 
+    z-index: 1; 
+    background-color: #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12); 
+    border-color: rgba(0, 0, 0, 0.54); 
+    color: rgba(0, 0, 0, 0.54); 
+    padding: 12px;
+    border-radius: 50%; 
+    width: 48px; 
+    height: 48px;
+}
+
+.left-nav-button span {
+    font-size: 24px;
+}
+
+.left-nav-button svg {
+    fill: rgba(0,0,0,0.54);
+}
+
+.right-nav-button span {
+    font-size: 24px;
+}
+
+.right-nav-button svg {
+    fill: rgba(0,0,0,0.54);
+}
+
+.node.last .right-nav-button {
+    display: none !important;
+}
+
+.node.active .right-nav-button {
+    display: block;
+}
+
 .node .node-wrap {
     height: 300px; 
     width: 100%; 
