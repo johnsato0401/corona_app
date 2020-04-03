@@ -45,7 +45,7 @@ class ChatPanel extends React.Component {
         const flows = this.props.flows.map((flow, index) => {
             if (flow.userType === 1) {
                 return (
-                    <UserChat flow={flow} key={index} />
+                    <UserChat flow={flow} key={index} sendQuery={this.props.sendQuery} />
                 );
             } else if (flow.userType === 0) {
                 return (
@@ -82,7 +82,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loadHistory: () => dispatch({ type: actions.LOADCHATHISTORY_LOAD })
+        loadHistory: () => dispatch({ type: actions.LOADCHATHISTORY_LOAD }),
+        sendQuery: (chat) => dispatch({ type: actions.SEND_QUERY, value: chat })
     }
 }
 

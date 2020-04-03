@@ -24,27 +24,27 @@
             {
                 "type": 0,
                 "data": [{
-                    "img": "aet",
+                    "img": "img/Critical.png",
                     "title": "Critical Information",
                     "content": "Check if you need to take action now.",
                     "link": "Critical Information"
                 },{
-                    "img": "aet",
+                    "img": "img/Preparing.png",
                     "title": "Current Status",
                     "content": "Check the latest status of COVID-19.",
                     "link": "Current Status"
                 },{
-                    "img": "aet",
+                    "img": "img/Protecting.png",
                     "title": "Protecting Yourself",
                     "content": "Learn how to avoid becoming infected.",
                     "link": "Protecting Yourself"
                 },{
-                    "img": "aet",
+                    "img": "img/Status.png",
                     "title": "Symptoms",
                     "content": "Learn how to recognise the symptoms of COVID-19 and how they differ from a cold or the flu.",
                     "link": "Symptoms"
                 },{
-                    "img": "aet",
+                    "img": "img/Symptoms.png",
                     "title": "Getting Prepared",
                     "content": "Make some common-sense preparations in case COVID-19 causes disruptions.",
                     "link": "Getting Prepared"

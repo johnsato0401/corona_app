@@ -55,8 +55,20 @@
     grid-template-columns: fit-content(500px) 1fr;
 }
 
+.chats .gallery {
+    margin: 2px;
+}
+
 .chats .chat.me {
     grid-template-columns:  1fr fit-content(500px);
+}
+
+.gallery .gallery-wrap {
+    display: flex;
+    overflow-x: auto;
+    border-radius: 4px;
+    scroll-behavior: smooth;
+    margin: 2px;
 }
 
 .chats .time-mark {
