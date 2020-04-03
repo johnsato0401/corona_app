@@ -52,19 +52,23 @@ class SenderForm extends React.Component {
 
     getMenuButton() {
         const strButton = this.state.showMenu === true ? this.strMenu : this.strShowNumber;
+        /*
         if (this.props.isLoading > 0 || this.props.isSending) {
             return null;
         } else {
-            return (
-                <div className='button-wrap'>
-                    <button className='btn-menu' type='button' onClick={this.sendMenu}>
-                        <span role='img' aria-label='donut'>
-                            {strButton}
-                        </span>
-                    </button>
-                </div>
-            );
+            */
+        return (
+            <div className='button-wrap'>
+                <button className='btn-menu' type='button' onClick={this.sendMenu}>
+                    <span role='img' aria-label='donut'>
+                        {strButton}
+                    </span>
+                </button>
+            </div>
+        );
+            /*
         }
+        */
     }
 
     render() {

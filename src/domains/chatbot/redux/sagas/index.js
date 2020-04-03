@@ -55,47 +55,69 @@ function* sendAsk(action) {
     let isOpenThread = false;
     let isSendThread = false;
     try {
-        if (indexOfAnswer === 0) {
-            indexOfAnswer = 1;
-        } else {
-            indexOfAnswer = 0;
-        }
+        const apiCall = (id) => {
+            return callGenerator(0, id);
+        };
 
-        const apiCall = (index) => {
-            if (index === 0) {
-                return callGenerator(1, 'answer1');
-            } else {
-                return callGenerator(1, 'answer2');
-            }
+        const apiCallThread = (id, index) => {
+            return callThreadGenerator(0, id, index);
         }
-
-        const apiCallThread = (key, index) => {
-            if (key === 0) {
-                return callThreadGenerator(1, 'answer1', index);
-            } else {
-                return callThreadGenerator(1, 'answer2', index);
-            }
-        }
-
-        yield put({ type: actions.LOADCHATHISTORY_SENDING });
+        yield put({ type: actions.LOADCHATHISTORY_SENDING});
         isSendThread = true
-        yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0});
-        // TODO: sending server.
-        yield put({ type: actions.LOADCHATHISTORY_SENDING_END });
-        
+        yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: action.value, from: 0 });
+        yield put({ type: actions.LOADCHATHISTORY_SENDING_END});
+
         yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
         isOpenThread = true;
-        let data = yield call(apiCall, indexOfAnswer);
-        yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
-        for (let i = 1; i < 100; i ++) {
-            if (data.isLast === undefined || data.isLast === true) {
-                break;
-            }
-
-            data = yield call(apiCallThread, indexOfAnswer, i);
+        let data = yield call(apiCall, action.value);
+        if (data !== null) {
             yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
+            for (let i = 1; i < 100; i ++) {
+                if (data.isLast === undefined || data.isLast === true) {
+                    break;
+                }
+    
+                data = yield call(apiCallThread, action.value, i);
+                yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: data.chat, from: 1});
+            }
+            yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
+        } else {
+            if (indexOfAnswer === 0) {
+                indexOfAnswer = 1;
+            } else {
+                indexOfAnswer = 0;
+            }
+    
+            const apiCallR = (index) => {
+                if (index === 0) {
+                    return callGenerator(1, 'answer1');
+                } else {
+                    return callGenerator(1, 'answer2');
+                }
+            }
+    
+            const apiCallThreadR = (key, index) => {
+                if (key === 0) {
+                    return callThreadGenerator(1, 'answer1', index);
+                } else {
+                    return callThreadGenerator(1, 'answer2', index);
+                }
+            }
+            
+            // yield put({ type: actions.LOADCHATHISTORY_FLOW_OPEN });
+            isOpenThread = true;
+            let dataR = yield call(apiCallR, indexOfAnswer);
+            yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: dataR.chat, from: 1});
+            for (let i = 1; i < 100; i ++) {
+                if (dataR.isLast === undefined || dataR.isLast === true) {
+                    break;
+                }
+    
+                dataR = yield call(apiCallThreadR, indexOfAnswer, i);
+                yield put({ type: actions.LOADCHATHISTORY_CHAT_ADDED, chat: dataR.chat, from: 1});
+            }
+            yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
         }
-        yield put({ type: actions.LOADCHATHISTORY_FLOW_END });
     } catch(error) {
         if (isOpenThread) {
             yield put({ type: actions.LOADCHATHISTORY_FLOW_END });

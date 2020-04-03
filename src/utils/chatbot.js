@@ -7,11 +7,15 @@ function getChatFlowFromData(data, type, id) {
         }
     }
 
-    return;
+    return null;
 }
 
 function readChatFlow(data, type, id) {
     const flow = getChatFlowFromData(data, type, id);
+    if (flow === null) {
+        return null;
+    }
+
     return {
         chat: flow.data[0],
         isLast: flow.data.length === 1 ? true : false
@@ -20,6 +24,10 @@ function readChatFlow(data, type, id) {
 
 function readChatThread(data, type, id, index) {
     const flow = getChatFlowFromData(data, type, id);
+    if (flow === null) {
+        return null;
+    }
+    
     return {
         chat: flow.data[index],
         isLast: flow.data.length - 1 <= index ? true : false

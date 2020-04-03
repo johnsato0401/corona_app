@@ -1,14 +1,19 @@
 import React from 'react';
 
 export default class MyChat extends React.Component{
-    render() {
-        const { flow } = this.props;
+    getParagraph(chat) {
+        const paragraph = chat.split('\n').map((p, index) =>{
+            return (
+                <p key={index} className='chat-word'>{p}</p>
+            );
+        });
+
+        return paragraph;
+    }
+
+    getChats(flow) {
         const chats = flow.chats.map((chat, index) => {
-            const paragraph = chat.split('\n').map((p, index) =>{
-                return (
-                    <p key={index} className='chat-word'>{p}</p>
-                );
-            });
+            const paragraph = this.getParagraph(chat);
             return (
                 <div key={index} className='chat me'>
                     <div></div>
@@ -20,6 +25,13 @@ export default class MyChat extends React.Component{
                 </div>
             );
         });
+
+        return chats;
+    }
+
+    render() {
+        const { flow } = this.props;
+        const chats = this.getChats(flow);
         return (
             <div className='chat-flow-wrap' style={{textAlign: 'right'}}>
                 <div className='chats'>

@@ -21,7 +21,36 @@
         "question": "menu",
         "type": 0,
         "data": [
-            "test"
+            {
+                "type": 0,
+                "data": [{
+                    "img": "aet",
+                    "title": "Critical Information",
+                    "content": "Check if you need to take action now.",
+                    "link": "Critical Information"
+                },{
+                    "img": "aet",
+                    "title": "Current Status",
+                    "content": "Check the latest status of COVID-19.",
+                    "link": "Current Status"
+                },{
+                    "img": "aet",
+                    "title": "Protecting Yourself",
+                    "content": "Learn how to avoid becoming infected.",
+                    "link": "Protecting Yourself"
+                },{
+                    "img": "aet",
+                    "title": "Symptoms",
+                    "content": "Learn how to recognise the symptoms of COVID-19 and how they differ from a cold or the flu.",
+                    "link": "Symptoms"
+                },{
+                    "img": "aet",
+                    "title": "Getting Prepared",
+                    "content": "Make some common-sense preparations in case COVID-19 causes disruptions.",
+                    "link": "Getting Prepared"
+                }]
+            },
+            "Next time you visit me, I'll go straight to an update on the numbers."
         ]
     },
     {
