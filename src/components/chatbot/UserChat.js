@@ -9,6 +9,21 @@ export default class UserChat extends React.Component {
         this.state = {
             active: 0
         };
+
+        this.galleryScroll = React.createRef();
+        this.galleryObj = React.createRef();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.galleryScroll.current !== null) {
+            if (this.state.active === 0) {
+                this.galleryScroll.current.scrollLeft = 0;
+            } else {
+                const node = this.galleryObj.current.clientWidth - 4;
+                const startPoint = (node * 8 / 10 + 8) * this.state.active;
+                this.galleryScroll.current.scrollLeft = startPoint - node / 10;
+            }
+        }
     }
 
     validURL(str) {
@@ -70,12 +85,16 @@ export default class UserChat extends React.Component {
                 </div>
                 <button className='left-nav-button' onClick={this.goOnLeft}>
                     <span>
-                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg>
+                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path>
+                        </svg>
                     </span>
                 </button>
                 <button className='right-nav-button' onClick={this.goOnRight}>
                     <span>
-                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path></svg>
+                        <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                        </svg>
                     </span>
                 </button>
             </div>
@@ -93,8 +112,8 @@ export default class UserChat extends React.Component {
                     });
                     
                     return (
-                        <div key={index} className='gallery'>
-                            <div className='gallery-wrap'>
+                        <div key={index} className='gallery' ref={this.galleryObj}>
+                            <div className='gallery-wrap' ref={this.galleryScroll}>
                                 {gallery}
                             </div>
                         </div>
