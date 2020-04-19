@@ -35,25 +35,56 @@ function readChatThread(data, type, id, index) {
 }
 
 export function callGenerator(type, id) {
-    return Axios.get(
-        'bot.json'
-    ).then(res => {
-        const result = readChatFlow(res.data, type, id);
-        return result;
-    })
-    .catch(err =>{
-        throw err;
-    });
+    if (type === 0 && id === "Show me the numbers") {
+        return Axios.get(
+            'https://api.covid19api.com/summary'
+        ).then(res => {
+            const chat = "Here are the latest global numbers:\ncases: " + res.data.Global.TotalConfirmed + "\ndeaths: "+ res.data.Global.TotalDeaths + "\nrecovered: " + res.data.Global.TotalRecovered
+            return {
+                chat: chat,
+                isLast: false
+            };
+        })
+        .catch(err =>{
+            throw err;
+        });
+    } else {
+        return Axios.get(
+            'bot.json'
+        ).then(res => {
+            const result = readChatFlow(res.data, type, id);
+            return result;
+        })
+        .catch(err =>{
+            throw err;
+        });
+    }
 }
 
 export function callThreadGenerator(type, id, index) {
-    return Axios.get(
-        'bot.json'
-    ).then(res => {
-        const result = readChatThread(res.data, type, id, index);
-        return result;
-    })
-    .catch(err =>{
-        throw err;
-    });
+    if (type === 0 && id === "welcome" && index === 1) {
+        return Axios.get(
+            'https://api.covid19api.com/summary'
+        ).then(res => {
+            const chat = "Here are the latest global numbers:\ncases: " + res.data.Global.TotalConfirmed + "\ndeaths: "+ res.data.Global.TotalDeaths + "\nrecovered: " + res.data.Global.TotalRecovered
+            return {
+                chat: chat,
+                isLast: false
+            };
+        })
+        .catch(err =>{
+            throw err;
+        });
+    } else {
+        return Axios.get(
+            'bot.json'
+        ).then(res => {
+            const result = readChatThread(res.data, type, id, index);
+            return result;
+        })
+        .catch(err =>{
+            throw err;
+        });
+    }
+    
 }
