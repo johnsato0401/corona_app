@@ -35,11 +35,12 @@ function readChatThread(data, type, id, index) {
 }
 
 export function callGenerator(type, id) {
-    if (type === 0 && id === "Show me the numbers") {
+    if (type === 0 && (id === "Show me the numbers" || id === "Current Status")) {
         return Axios.get(
-            'https://api.covid19api.com/summary'
+            'https://api.covid19api.com/country/Nigeria'
         ).then(res => {
-            const chat = "Here are the latest global numbers:\ncases: " + res.data.Global.TotalConfirmed + "\ndeaths: "+ res.data.Global.TotalDeaths + "\nrecovered: " + res.data.Global.TotalRecovered
+            let data = res.data[res.data.length - 1];
+            const chat = "Here are the latest NG numbers:\ncases: " + data.Confirmed + "\ndeaths: "+ data.Deaths + "\nrecovered: " + data.Recovered
             return {
                 chat: chat,
                 isLast: false
@@ -64,9 +65,10 @@ export function callGenerator(type, id) {
 export function callThreadGenerator(type, id, index) {
     if (type === 0 && id === "welcome" && index === 1) {
         return Axios.get(
-            'https://api.covid19api.com/summary'
+            'https://api.covid19api.com/country/Nigeria'
         ).then(res => {
-            const chat = "Here are the latest global numbers:\ncases: " + res.data.Global.TotalConfirmed + "\ndeaths: "+ res.data.Global.TotalDeaths + "\nrecovered: " + res.data.Global.TotalRecovered
+            let data = res.data[res.data.length - 1];            console.log(data);
+            const chat = "Here are the latest NG numbers:\ncases: " + data.Confirmed + "\ndeaths: "+ data.Deaths + "\nrecovered: " + data.Recovered
             return {
                 chat: chat,
                 isLast: false
