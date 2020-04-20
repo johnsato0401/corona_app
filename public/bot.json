@@ -1,9 +1,8 @@
-[
-    {
+[{
         "question": "first",
         "type": 0,
         "data": [
-            "👏 Welcome! This COVID-19 🦠 bot is focused on 🇬🇧 people.",
+            "👏 Welcome! This COVID-19 🦠 bot is focused on NG people.",
             "⚠️ I am not a medical diagnosis system. If you require medical advice, please speak to your local healthcare provider."
         ]
     },
@@ -30,22 +29,22 @@
                     "title": "Critical Information",
                     "content": "Check if you need to take action now.",
                     "link": "Critical Information"
-                },{
+                }, {
                     "img": "img/Status.png",
                     "title": "Current Status",
                     "content": "Check the latest status of COVID-19.",
                     "link": "Current Status"
-                },{
+                }, {
                     "img": "img/Protecting.png",
                     "title": "Protecting Yourself",
                     "content": "Learn how to avoid becoming infected.",
                     "link": "Protecting Yourself"
-                },{
+                }, {
                     "img": "img/Symptoms.png",
                     "title": "Symptoms",
                     "content": "Learn how to recognise the symptoms of COVID-19 and how they differ from a cold or the flu.",
                     "link": "Symptoms"
-                },{
+                }, {
                     "img": "img/Preparing.png",
                     "title": "Getting Prepared",
                     "content": "Make some common-sense preparations in case COVID-19 causes disruptions.",
@@ -71,7 +70,7 @@
         "type": 0,
         "data": [
             "Here are the latest global numbers:\ncases: 1,015,048\ndeaths: 53,166\nrecovered: 212,035",
-            "All data is collected from:", 
+            "All data is collected from:",
             "https://www.worldometers.info/coronavirus/",
             "Choose which countries you want included in these updates by entering 'set country' followed by a list of countries (names or their flag emoji)"
         ]
