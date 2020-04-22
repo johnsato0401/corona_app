@@ -21,7 +21,7 @@
         "question": "menu",
         "type": 0,
         "data": [
-            "👉 Here's my top tips…\n1️⃣ Wash your hands frequently with soap 🧼 and water 💦 or an alcohol-based hand cleaner\n2️⃣ Avoid touching your face 🤭\n3️⃣ Stay at home if you have a temperature 🤒 or any respiratory symptoms 🤧, no matter how mild.\nPress the menu button below 👇 to checkout how I can help you.",
+            "👉 Here's my top tips…\n1️⃣ Wash your hands frequently with soap 🧼 and water 💦 or an alcohol-based hand cleaner\n2️⃣ Avoid touching your face 🤭\n3️⃣ Stay at home🏠 if you have a temperature 🤒 or any respiratory symptoms 🤧, no matter how mild.\nPress the menu button below 👇 to checkout how I can help you.",
             {
                 "type": 0,
                 "data": [{
@@ -99,6 +99,20 @@
         ]
     },
     {
+        "question": "protect",
+        "type": 0,
+        "data": [
+            "To reduce the risk of infection or spread of 🦠COVID-19, members of the public are advised to adhere to the following hand and respiratory hygiene measures:",
+            "• Keep a social distance of least 2 metres(🧍▫️▫️🧍) while in public and avoid large gatherings and crowded places such as supermarkets and outdoor markets(🚫🛒😡).",
+            "• Wash your 👏hands regularly with soap🧼 under running water and use hand sanitisers frequently",
+            "• Cover your 👄mouth and 👃🏿nose properly with 🧻tissue paper when 🤧sneezing and/or 🤧coughing and immediately dispose of the 🧻tissue in a covered 🗑️waste bin. After this, wash your 👏hands with 🧼soap and 💧water or use hand sanitiser",
+            "• You may also cough into your elbow(✅🤧💪) if disposable 🧻tissue is not available. You are strongly advised not to re-use handkerchiefs",
+            "• If you become sick while 🧳travelling, you should avoid close contact with other people while you are symptomatic and cover your 👄mouth and 👃🏿nose with a face mask",
+            "• Avoid close contact with anyone(🚫🧑‍🤝‍🧑) showing symptoms of respiratory illness such as 🤧coughing and 🤧sneezing",
+            "• Healthcare workers👩🏾‍⚕️ are always advised to observe standard infection prevention and control measures when attending to patients🤒 and take a travel history"
+        ]
+    },
+    {
         "question": "Current Status",
         "type": 0,
         "data": [
@@ -114,7 +128,7 @@
             "This would include government updates:",
             "It means that anyone who has been exposed to the virus🦠 (e.g. those returning from high risk countries*) should stay at 🏠home and in 🧱strict isolation from their families for 14 days. This is to limit contact with people, protect yourself and loved ones.",
             "This would include government updates:",
-            "If you have travelled from the following countries:\nChina 🇨🇳,\nItaly 🇮🇹,\nIran 🇮🇷,\nJapan 🇯🇵,\nRepublic of Korea 🇰🇷,\nSpain 🇪🇸,\nGermany 🇩🇪,\nand France 🇫🇷, \nwith widespread community transmission of COVID-19 to Nigeria 🇳🇬 in the last 14 days, you should STAY INDOORS and avoid contact with other people. Please follow this advice even if you do not have symptoms of the virus. If you develop symptoms during this time, immediately contact NCDC on 07032864444 or 080097000010 (toll-free)"
+            "If you have travelled from the following countries:\nChina 🇨🇳,\nItaly 🇮🇹,\nIran 🇮🇷,\nJapan 🇯🇵,\nRepublic of Korea 🇰🇷,\nSpain 🇪🇸,\nGermany 🇩🇪,\nand France 🇫🇷, \nwith widespread community transmission of COVID-19 to Nigeria 🇳🇬 in the last 14 days, you should STAY INDOORS and avoid contact with other people. Please follow this advice even if you do not have symptoms of the virus. If you develop symptoms during this time, immediately ☎️contact NCDC on 07032864444 or 080097000010 (toll-free)"
         ]
     },
     {
@@ -144,7 +158,7 @@
         "type": 0,
         "data": [
             "• Cough🤧\n• Fever🌡️\n• Breathing difficulties",
-            "People who have recently travelled from any country* with ongoing transmission of 🦠COVID-19 and feel unwell, should immediately contact NCDC on 07032864444 or 080097000010 (toll-free)."
+            "People who have recently travelled from any country* with ongoing transmission of 🦠COVID-19 and feel unwell, should immediately ☎️contact NCDC on 07032864444 or 080097000010 (toll-free)."
         ]
     },
     {
@@ -174,14 +188,14 @@
         "question": "What does self-isolation mean?",
         "type": 0,
         "data": [
-            "Self-isolation is an important way of controlling the spread of 🦠COVID-19. It means that anyone who has been exposed to the virus (e.g. those returning from high risk countries*) should stay at home and in strict isolation from their families for 14 days. This is to limit contact with people, protect yourself and loved ones."
+            "Self-isolation is an important way of controlling the spread of 🦠COVID-19. It means that anyone who has been exposed to the virus🦠 (e.g. those returning from high risk countries*) should stay at home🏠 and in strict isolation from their families for 14 days. This is to limit contact with people, protect yourself and loved ones."
         ]
     },
     {
         "question": "Is there a restriction of flights coming from affected countries?",
         "type": 0,
         "data": [
-            "Presently, the World Health Organization (WHO)🌎 does not recommend any travel or trade restriction based on the current information available. All travellers to Nigeria will be screened on entry, regardless of country of travel origin. However, additional measures are in place for travellers from countries* with widespread community transmission."
+            "Presently, the World Health Organization (WHO)🌎 does not recommend any travel or trade restriction based on the current information available. All travellers🧑‍🤝‍🧑 to Nigeria will be screened on entry, regardless of country of travel origin. However, additional measures are in place for travellers from countries* with widespread community transmission."
         ]
     },
     {
@@ -189,7 +203,7 @@
         "type": 0,
         "data": [
             "Yes. Currently, five laboratories in Nigeria can diagnose 🦠COVID-19; NCDC National Reference Laboratory🧪; Virology Laboratory of Lagos University Teaching Hospital🏥; Irrua Specialist Teaching Hospital; Nigerian Institute of Medical Research🔬; and African Centre of Excellence for Genomics of Infectious Diseases🕋. They are all in the NCDC molecular laboratory network🖧.",
-            "Health officials👩🏾‍⚕️ are advised to call 07032864444 for sample transportation and related advice if they have a case that fits the national case definition."
+            "Health officials👩🏾‍⚕️ are advised to call ☎️07032864444 for sample transportation and related advice if they have a case that fits the national case definition."
         ]
     },
     {
@@ -218,14 +232,14 @@
         "question": "What should I do when I return to Nigeria from a country with a confirmed case(s) of COVID-19?",
         "type": 0,
         "data": [
-            "If you have travelled from any country* with widespread community transmission of 🦠COVID-19 to Nigeria in the last 14 days, you should stay indoors and avoid contact with other people. Please follow this advice even if you do not have symptoms of the virus. If you develop symptoms during this time, immediately contact NCDC on 07032864444 or 080097000010 (toll-free)"
+            "If you have travelled from any country* with widespread community transmission of 🦠COVID-19 to Nigeria in the last 14 days, you should stay indoors and avoid contact with other people. Please follow this advice even if you do not have symptoms of the virus. If you develop symptoms during this time, immediately ☎️contact NCDC on 07032864444 or 080097000010 (toll-free)"
         ]
     },
     {
         "question": "Am I at risk of catching COVID-19 from a package or products that arrive from countries with a confirmed case(s)?",
         "type": 0,
         "data": [
-            "Currently there is no evidence to support transmission of 🦠COVID-19 associated with imported goods or packages countries with confirmed case(s). Till 🗓️date, there is no known case of 🦠COVID-19 in Nigeria associated with imported goods."
+            "Currently there is no evidence🕵️ to support transmission of 🦠COVID-19 associated with imported goods or packages countries with confirmed case(s). Till 🗓️date, there is no known case of 🦠COVID-19 in Nigeria associated with imported goods."
         ]
     },
     {
@@ -264,7 +278,7 @@
         "question": "answer1",
         "type": 1,
         "data": [
-            "Sorry, I know a lot, but not everything."
+            "Sorry🙇🏾‍♀️, I know a lot, but not everything."
         ]
     },
     {

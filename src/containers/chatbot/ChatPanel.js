@@ -30,7 +30,7 @@ class ChatPanel extends React.Component {
                 <
                 div id = "wave" >
                 <
-                span className = "dot" > < /span> <span className = "dot" > < /span > < /div > < /div >
+                span className = "dot" > < /span> <span className = "dot" > < /span > < span className = "dot" > < /span > < /div > < /div >
             );
         } else {
             return null;
