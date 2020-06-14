@@ -8,11 +8,15 @@ import * as serviceWorker from './serviceWorker';
 import configuredStore from 'store';
 
 const store = configuredStore(undefined);
+dfgdfgdfgdfg
+
+
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
+  gfgfgh
   document.getElementById('root')
 );
 
